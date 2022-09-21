@@ -9,7 +9,7 @@
     min-height: 50px;
     border-radius: var(--border);
     position: sticky;
-    transition: transform 0.2s ease-out;
+    transition: transform 0.3s ease-out;
 }
 
 .nav:hover {
@@ -39,17 +39,24 @@
     color: var(--white);
 }
 
-.nav--links>ul>li {
+.nav--links>ul>a {
     margin: 0 5px;
     font-size: 0.8rem;
     padding: 3px 10px;
     border-radius: var(--border);
     cursor: pointer;
     text-transform: lowercase;
+    color: var(--white);
+    text-decoration: none;
 }
 
-.nav--links>ul>li:hover {
+.nav--links>ul>a:hover {
     background-color: var(--white);
+    color: var(--black);
+}
+
+.nav--links>ul>a:active {
+    background-color: var(--pink);
     color: var(--black);
 }
 
