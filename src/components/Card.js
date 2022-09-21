@@ -2,7 +2,7 @@ import "./Card.css";
 
 export default function Card(props) {
   const { item } = props;
-  const { name, price, image_link, id } = item;
+  const { name, price, image_link, product_colors, id } = item;
   return (
     <div className="card">
       <div className="img-wrapper">
