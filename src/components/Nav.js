@@ -14,7 +14,7 @@ export default function Nav() {
           <Link to="/shop">
             <li>Shop</li>
           </Link>
-          <Link to="/about">
+          <Link to="/about" data-testid="about-page-link">
             <li>About</li>
           </Link>
         </ul>
