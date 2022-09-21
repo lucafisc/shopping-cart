@@ -5,7 +5,9 @@ import shoppingIcon from "../images/icons/shopping-bag-white.png";
 export default function Nav() {
   return (
     <nav className="nav">
-      <div className="nav--logo">logo</div>
+      <Link to="/">
+        <div className="nav--logo">logo</div>
+      </Link>
       <div className="nav--links">
         <ul>
           <Link to="/">
@@ -18,9 +20,11 @@ export default function Nav() {
             <li>About</li>
           </Link>
         </ul>
-        <div className="nav--favorites">
-          <img src={favoritesIcon} />
-        </div>
+        <Link to="/favorites">
+          <div className="nav--favorites">
+            <img src={favoritesIcon} />
+          </div>
+        </Link>
         <div className="nav--shopping-cart">
           <img src={shoppingIcon} />
         </div>

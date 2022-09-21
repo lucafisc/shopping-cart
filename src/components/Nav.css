@@ -47,7 +47,6 @@
     cursor: pointer;
     text-transform: lowercase;
     color: var(--white);
-    text-decoration: none;
 }
 
 .nav--links>ul>a:hover {
