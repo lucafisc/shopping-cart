@@ -30,4 +30,5 @@ a {
 
 body {
   background-color: var(--white);
+  margin: 15px;
 }

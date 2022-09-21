@@ -1,4 +1,6 @@
 import "./Shop.css";
+import Card from "./Card";
+import Loading from "./Loading";
 import React, { useState, useEffect } from "react";
 export default function Shop() {
   useEffect(() => {
@@ -13,9 +15,9 @@ export default function Shop() {
     setItems(items);
   };
 
-  const cards = items.map((item) => {
-    return <Card />;
-  });
+  const cards = items.map((item) => <Card item={item} />);
 
-  return <div>{cards}</div>;
+  return (
+    <div className="items-grid">{items.length < 1 ? <Loading /> : cards}</div>
+  );
 }
