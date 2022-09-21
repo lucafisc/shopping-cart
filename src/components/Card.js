@@ -2,14 +2,13 @@ import "./Card.css";
 
 export default function Card(props) {
   const { item } = props;
-  const { title, price, images, id } = item;
-  console.log(title);
+  const { name, price, image_link, id } = item;
   return (
     <div className="card">
       <div className="img-wrapper">
-        <img src={images[0]} />
+        <img src={image_link} />
       </div>
-      <h4>{title}</h4>
+      <h4>{name}</h4>
       <h3>{price}</h3>
     </div>
   );

@@ -10,9 +10,12 @@ export default function Shop() {
   const [items, setItems] = useState([]);
 
   const fetchItems = async () => {
-    const data = await fetch("https://api.escuelajs.co/api/v1/products");
+    const data = await fetch(
+      "http://makeup-api.herokuapp.com/api/v1/products.json"
+    );
     const items = await data.json();
     setItems(items);
+    console.log(items);
   };
 
   const cards = items.map((item) => <Card item={item} />);
