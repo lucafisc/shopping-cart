@@ -31,6 +31,8 @@ export default function Shop() {
           <Loading />
           <Loading />
           <Loading />
+          <Loading />
+          <Loading />
         </div>
       ) : (
         <div className="items-grid">{cards}</div>

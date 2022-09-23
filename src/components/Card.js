@@ -10,17 +10,21 @@ export default function Card(props) {
   const {
     name,
     price,
-    image_link,
     product_colors,
     id,
     api_featured_image,
     tag_list,
+    product_api_url,
   } = item;
   useEffect(() => {
     imageExists(api_featured_image, function (exists) {
       if (exists) {
         setErr(false);
       } else {
+        setErr(true);
+      }
+
+      if (price <= 0) {
         setErr(true);
       }
     });
