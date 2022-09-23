@@ -2,8 +2,9 @@ import "./Item.css";
 import { useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { fetchItems } from "../modules/fetchItems";
-
-export default function Item() {
+import icon from "../images/icons/shopping-bag-white.png";
+export default function Item(props) {
+  const { addToShoppingCart } = props;
   const [item, setItem] = useState({});
 
   const location = useLocation();
@@ -23,7 +24,10 @@ export default function Item() {
             <h1 className="item--title">{item.name}</h1>
             <h3 className="item--title">€ {item.price}</h3>
           </div>
-          <button className="item--buy">add to cart</button>
+          <button className="item--buy" onClick={() => addToShoppingCart(url)}>
+            <img src={icon} />
+            <p>+</p>
+          </button>
         </div>
         <p className="item--text">{item.description}</p>
       </div>

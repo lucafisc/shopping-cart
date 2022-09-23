@@ -2,7 +2,20 @@ import { Link } from "react-router-dom";
 import "./Nav.css";
 import favoritesIcon from "../images/icons/favorite-white.png";
 import shoppingIcon from "../images/icons/shopping-bag-white.png";
-export default function Nav() {
+import { useState, useEffect } from "react";
+
+export default function Nav(props) {
+  const { shoppingCart } = props;
+  const amount = shoppingCart.length;
+
+  const [circleClasses, setCircleClasses] = useState("");
+  useEffect(() => {
+    setCircleClasses("pulsate");
+    setTimeout(() => {
+      setCircleClasses("");
+    }, 1000);
+  }, [shoppingCart]);
+
   return (
     <nav className="nav">
       <Link to="/">
@@ -27,6 +40,11 @@ export default function Nav() {
         </Link>
         <div className="nav--shopping-cart">
           <img src={shoppingIcon} />
+          {amount > 0 && (
+            <div className={circleClasses}>
+              <p>{amount}</p>
+            </div>
+          )}
         </div>
       </div>
     </nav>

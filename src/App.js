@@ -11,18 +11,34 @@ import {
   Route,
   Routes,
 } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 function App() {
+  const [shoppingCart, setShoppingCart] = useState(
+    JSON.parse(localStorage.getItem("shopping-cart")) || []
+  );
+
+  useEffect(() => {
+    localStorage.setItem("shopping-cart", JSON.stringify(shoppingCart));
+  }, [shoppingCart]);
+
+  function addToShoppingCart(item) {
+    setShoppingCart((prevArray) => [...prevArray, item]);
+  }
+
   return (
     <Router>
       <div className="App">
-        <Nav />
+        <Nav shoppingCart={shoppingCart} />
         <Routes>
           <Route path="/" exact element={<Home />} />
           <Route path="/shop" element={<Shop />} />
           <Route path="/about" element={<About />} />
           <Route path="/favorites" element={<Favorites />} />
-          <Route path="/shop/:id" element={<Item />} />
+          <Route
+            path="/shop/:id"
+            element={<Item addToShoppingCart={addToShoppingCart} />}
+          />
         </Routes>
       </div>
     </Router>
