@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "./Card.css";
 import ProductColor from "./ProductColor";
 import FavoriteButton from "./FavoriteButton";
@@ -40,18 +41,20 @@ export default function Card(props) {
   return (
     <>
       {err === false && (
-        <div className="card">
-          <div className="img-wrapper">
-            <img src={api_featured_image} />
-            {vegan && <h3 className="vegan">Vegan</h3>}
-            <FavoriteButton />
+        <Link to={`/shop/${id}`} state={{ url: product_api_url }}>
+          <div className="card">
+            <div className="img-wrapper">
+              <img src={api_featured_image} />
+              {vegan && <h3 className="vegan">Vegan</h3>}
+              <FavoriteButton />
+            </div>
+            <h4>{name}</h4>
+            <h4>€ {price}</h4>
+            {organic && <h4 style={{ color: "#78b379" }}>Organic</h4>}
+            {natural && <h4 style={{ color: "#5957e0" }}>Natural</h4>}
+            <div className="product-colors">{productColors}</div>
           </div>
-          <h4>{name}</h4>
-          <h4>€ {price}</h4>
-          {organic && <h4 style={{ color: "#78b379" }}>Organic</h4>}
-          {natural && <h4 style={{ color: "#5957e0" }}>Natural</h4>}
-          <div className="product-colors">{productColors}</div>
-        </div>
+        </Link>
       )}
     </>
   );

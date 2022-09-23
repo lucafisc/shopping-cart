@@ -3,11 +3,20 @@ import "./Shop.css";
 import Card from "./Card";
 import Loading from "./Loading";
 import Categories from "./Categories";
+import { fetchItems } from "../modules/fetchItems";
+
 export default function Shop() {
   const [items, setItems] = useState([]);
-  const [category, setCategory] = useState("blush");
+  const [category, setCategory] = useState(
+    JSON.parse(localStorage.getItem("category")) || "blush"
+  );
   useEffect(() => {
-    fetchItems(category, setItems);
+    const url = `http://makeup-api.herokuapp.com/api/v1/products.json?product_type=${category}`;
+    fetchItems(url, setItems);
+  }, [category]);
+
+  useEffect(() => {
+    localStorage.setItem("category", JSON.stringify(category));
   }, [category]);
 
   function categoryChange(categ) {
@@ -19,7 +28,7 @@ export default function Shop() {
 
   return (
     <>
-      <Categories categoryChange={categoryChange} />
+      <Categories category={category} categoryChange={categoryChange} />
 
       {items.length < 1 ? (
         <div className="loading-container">
@@ -40,12 +49,3 @@ export default function Shop() {
     </>
   );
 }
-
-const fetchItems = async (category, setItems) => {
-  const data = await fetch(
-    `http://makeup-api.herokuapp.com/api/v1/products.json?product_type=${category}`
-  );
-  const items = await data.json();
-  setItems(items);
-  console.log(items);
-};

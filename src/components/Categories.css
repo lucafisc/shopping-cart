@@ -23,7 +23,6 @@
 
 .category {
     font-family: var(--karla);
-    font-weight: 100;
     font-size: 0.5rem;
     padding: 5px 8px;
     margin: 5px;
@@ -53,5 +52,15 @@
 }
 
 .category:hover>img {
+    opacity: 1;
+}
+
+.category--current {
+    color: var(--black);
+    background-color: var(--pink);
+    border-color: var(--black);
+}
+
+.category--current>img {
     opacity: 1;
 }

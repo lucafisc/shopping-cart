@@ -12,7 +12,7 @@ function importAll(r) {
 }
 
 export default function Categories(props) {
-  const { categoryChange } = props;
+  const { categoryChange, category } = props;
   const [icons, setIcons] = useState({});
   useEffect(() => {
     setIcons(
@@ -29,7 +29,12 @@ export default function Categories(props) {
   const categs = APICategories.map((categ) => {
     const icon = icons[categ + ".png"];
     return (
-      <Category categ={categ} icon={icon} categoryChange={categoryChange} />
+      <Category
+        category={category}
+        categ={categ}
+        icon={icon}
+        categoryChange={categoryChange}
+      />
     );
   });
   return (

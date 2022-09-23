@@ -4,6 +4,7 @@ import Home from "./components/Home";
 import Shop from "./components/Shop";
 import About from "./components/About";
 import Favorites from "./components/Favorites";
+import Item from "./components/Item";
 import {
   BrowserRouter as Router,
   Switch,
@@ -21,6 +22,7 @@ function App() {
           <Route path="/shop" element={<Shop />} />
           <Route path="/about" element={<About />} />
           <Route path="/favorites" element={<Favorites />} />
+          <Route path="/shop/:id" element={<Item />} />
         </Routes>
       </div>
     </Router>
