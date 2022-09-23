@@ -1,5 +1,25 @@
 .card {
     font-family: var(--karla);
+    cursor: pointer;
+    padding: 10px;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    transition: all 0.2s ease-out;
+}
+
+.card:hover {
+    background-color: #f8f8f8;
+}
+
+.card:active {
+    background-color: white;
+}
+
+.card>h4 {
+    color: var(--gray);
+    text-transform: uppercase;
+    font-size: 0.5rem;
+    font-weight: 300;
 }
 
 .img-wrapper {
@@ -8,15 +28,71 @@
     overflow: hidden;
     display: flex;
     justify-content: center;
+    margin-bottom: 10px;
+    position: relative;
+    background-color: white;
 }
 
 .img-wrapper>img {
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    transition: transform 0.2s ease-out;
+    object-fit: contain;
 }
 
-.img-wrapper:hover>img {
-    transform: scale(1.1);
+.img-wrapper:hover>img {}
+
+.vegan {
+    position: absolute;
+    color: white;
+    font-family: var(--picnic);
+    text-transform: lowercase;
+    font-size: 0.8rem;
+    top: 10px;
+    right: 10px;
+    background-color: var(--green);
+    padding: 4px;
+    padding-top: 2px;
+    border-radius: 5px;
+}
+
+.favorite-btn {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    background-color: #f8f8f8;
+    bottom: 5px;
+    right: 10px;
+    border-radius: 11px;
+    border: 0.5px solid var(--black);
+    transition: all 0.2s ease-out;
+    box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.16);
+}
+
+.favorite-btn:hover {
+    background-color: var(--pink);
+}
+
+.favorite-btn:active {
+    transform: scale(0.95);
+}
+
+.favorite-btn>img {
+    padding: 4px;
+    width: 100%;
+}
+
+.product-colors {
+    margin-top: 8px;
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 2px;
+}
+
+.color {
+    height: 8px;
+    aspect-ratio: 1;
+    border: 1px solid;
+}
+
+.color:hover {
+    border-color: var(--black) !important;
 }

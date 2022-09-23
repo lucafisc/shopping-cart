@@ -31,4 +31,5 @@ const fetchItems = async (category, setItems) => {
   );
   const items = await data.json();
   setItems(items);
+  console.log(items);
 };

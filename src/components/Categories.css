@@ -23,6 +23,7 @@
 
 .category {
     font-family: var(--karla);
+    font-weight: 100;
     font-size: 0.5rem;
     padding: 5px 8px;
     margin: 5px;
