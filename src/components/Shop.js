@@ -20,7 +20,21 @@ export default function Shop() {
   return (
     <>
       <Categories categoryChange={categoryChange} />
-      <div className="items-grid">{items.length < 1 ? <Loading /> : cards}</div>
+
+      {items.length < 1 ? (
+        <div className="loading-container">
+          <Loading />
+          <Loading />
+          <Loading />
+          <Loading />
+          <Loading />
+          <Loading />
+          <Loading />
+          <Loading />
+        </div>
+      ) : (
+        <div className="items-grid">{cards}</div>
+      )}
     </>
   );
 }
