@@ -8,15 +8,8 @@ var imageExists = require("image-exists");
 export default function Card(props) {
   const [err, setErr] = useState(false);
   const { item } = props;
-  const {
-    name,
-    price,
-    product_colors,
-    id,
-    api_featured_image,
-    tag_list,
-    product_api_url,
-  } = item;
+  const { name, price, product_colors, id, api_featured_image, tag_list } =
+    item;
   useEffect(() => {
     imageExists(api_featured_image, function (exists) {
       if (exists) {
@@ -41,7 +34,7 @@ export default function Card(props) {
   return (
     <>
       {err === false && (
-        <Link to={`/shop/${id}`} state={{ url: product_api_url }}>
+        <Link to={`/shop/${id}`} state={{ item: item }}>
           <div className="card">
             <div className="img-wrapper">
               <img src={api_featured_image} />

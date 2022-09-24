@@ -5,7 +5,7 @@ import shoppingIcon from "../images/icons/shopping-bag-white.png";
 import { useState, useEffect } from "react";
 
 export default function Nav(props) {
-  const { shoppingCart } = props;
+  const { shoppingCart, toggleCart } = props;
   const amount = shoppingCart.length;
 
   const [circleClasses, setCircleClasses] = useState("");
@@ -38,7 +38,7 @@ export default function Nav(props) {
             <img src={favoritesIcon} />
           </div>
         </Link>
-        <div className="nav--shopping-cart">
+        <div className="nav--shopping-cart" onClick={toggleCart}>
           <img src={shoppingIcon} />
           {amount > 0 && (
             <div className={circleClasses}>

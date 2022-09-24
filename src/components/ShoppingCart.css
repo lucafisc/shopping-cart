@@ -1,0 +1,80 @@
+.list-menu {
+    position: absolute;
+    width: 300px;
+    min-height: 100px;
+    max-height: 80vh;
+    top: 80px;
+    right: 20px;
+    font-family: var(--karla);
+    padding: 20px;
+    background-color: white;
+    z-index: 999;
+    border: var(--radius);
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 20px 20px 20px;
+    border-color: transparent transparent #ffffff transparent;
+    position: absolute;
+    top: -20px;
+    right: 15px;
+    z-index: 999;
+}
+
+.shopping-cart-container {
+    overflow: scroll;
+    margin: 10px 0;
+    height: 100%;
+}
+
+.list-close {
+    background-color: white;
+    color: var(--gray);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.6rem;
+    padding: 3px;
+    width: 15px;
+    height: 15px;
+    margin-left: auto;
+    border: none;
+    cursor: pointer;
+}
+
+.list-item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.list-item>img {
+    width: 50px;
+}
+
+.list-item--text {
+    margin-right: 10px;
+    margin-left: 10px;
+
+}
+
+.list-item--text>h1 {
+    color: var(--gray);
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+.list-item--price {
+    margin-left: auto;
+    white-space: nowrap;
+}
+
+hr {
+    border: none;
+    border-top: 0.5px solid var(--gray);
+}
