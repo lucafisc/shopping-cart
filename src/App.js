@@ -19,6 +19,24 @@ function App() {
     JSON.parse(localStorage.getItem("shopping-cart")) || []
   );
   const [showCart, setShowCart] = useState(false);
+  const [width, setWidth] = useState(window.innerWidth);
+  const [lockScroll, setLockScroll] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => setWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  });
+
+  useEffect(() => {
+    if (width < 600 && showCart) {
+      setLockScroll(true);
+    } else {
+      setLockScroll(false);
+    }
+  }, [width, showCart]);
 
   useEffect(() => {
     localStorage.setItem("shopping-cart", JSON.stringify(shoppingCart));
@@ -42,31 +60,49 @@ function App() {
     });
   }
 
-  // function addItem(changedItem) {
-  //   let array = [];
-  //   items.map((item) => {
-  //     if (item.id === changedItem.id) {
-  //       const x = item.quantity + 1;
-  //       array.push({ ...item, quantity: x });
-  //     } else {
-  //       array.push({ ...item });
-  //     }
-  //   });
-  //   setItems(array);
-  // }
+  function addItem(changedItem) {
+    setShoppingCart((prevArray) => {
+      let array = [];
+      prevArray.map((item) => {
+        if (item.id === changedItem.id) {
+          const x = item.quantity + 1;
+          array.push({ ...item, quantity: x });
+        } else {
+          array.push({ ...item });
+        }
+      });
+      return array;
+    });
+  }
 
-  // function subtrackItem(changedItem) {
-  //   let array = [];
-  //   items.map((item) => {
-  //     if (item.id === changedItem.id) {
-  //       const x = item.quantity - 1;
-  //       if (x > 0) array.push({ ...item, quantity: x });
-  //     } else {
-  //       array.push({ ...item });
-  //     }
-  //   });
-  //   setItems(array);
-  // }
+  function subtractItem(changedItem) {
+    setShoppingCart((prevArray) => {
+      let array = [];
+      prevArray.map((item) => {
+        if (item.id === changedItem.id) {
+          const x = item.quantity - 1;
+          if (x > 0) array.push({ ...item, quantity: x });
+        } else {
+          array.push({ ...item });
+        }
+      });
+      return array;
+    });
+  }
+
+  function changeItem(value, changedItem) {
+    setShoppingCart((prevArray) => {
+      let array = [];
+      prevArray.map((item) => {
+        if (item.id === changedItem.id) {
+          if (value > 0) array.push({ ...item, quantity: value });
+        } else {
+          array.push({ ...item });
+        }
+      });
+      return array;
+    });
+  }
 
   function toggleCart() {
     setShowCart((prevValue) => !prevValue);
@@ -77,18 +113,26 @@ function App() {
       <div className="App">
         <Nav shoppingCart={shoppingCart} toggleCart={toggleCart} />
         {showCart && (
-          <ShoppingCart shoppingCart={shoppingCart} toggleCart={toggleCart} />
-        )}
-        <Routes>
-          <Route path="/" exact element={<Home />} />
-          <Route path="/shop" element={<Shop />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/favorites" element={<Favorites />} />
-          <Route
-            path="/shop/:id"
-            element={<Item addToShoppingCart={addToShoppingCart} />}
+          <ShoppingCart
+            shoppingCart={shoppingCart}
+            toggleCart={toggleCart}
+            subtractItem={subtractItem}
+            addItem={addItem}
+            changeItem={changeItem}
           />
-        </Routes>
+        )}
+        {!lockScroll && (
+          <Routes>
+            <Route path="/" exact element={<Home />} />
+            <Route path="/shop" element={<Shop />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/favorites" element={<Favorites />} />
+            <Route
+              path="/shop/:id"
+              element={<Item addToShoppingCart={addToShoppingCart} />}
+            />
+          </Routes>
+        )}
       </div>
     </Router>
   );

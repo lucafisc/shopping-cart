@@ -24,8 +24,8 @@ export default function Card(props) {
     });
   }, []);
 
-  const productColors = product_colors.map((color) => (
-    <ProductColor color={color} />
+  const productColors = product_colors.map((color, index) => (
+    <ProductColor color={color} key={color + index} />
   ));
 
   const organic = tag_list.includes("Organic");

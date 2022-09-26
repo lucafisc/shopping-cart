@@ -24,7 +24,7 @@ export default function Shop() {
     setCategory(categ);
   }
 
-  const cards = items.map((item) => <Card item={item} />);
+  const cards = items.map((item) => <Card item={item} key={item.id} />);
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {

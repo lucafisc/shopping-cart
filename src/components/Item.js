@@ -19,8 +19,8 @@ export default function Item(props) {
     description,
   } = item;
 
-  const productColors = product_colors.map((color) => (
-    <ProductColor color={color} />
+  const productColors = product_colors.map((color, index) => (
+    <ProductColor color={color} key={color + index} />
   ));
 
   return (

@@ -1,5 +1,5 @@
 export default function ListItem(props) {
-  const { item, addItem, subtrackItem } = props;
+  const { item, addItem, subtractItem, changeItem } = props;
   const { name, quantity, price, api_featured_image } = item;
   return (
     <>
@@ -8,10 +8,15 @@ export default function ListItem(props) {
         <div className="list-item--text">
           <h1>{name}</h1>
           <div className="list-item--quantity">
-            <button className="list-button" onClick={() => subtrackItem(item)}>
+            <button className="list-button" onClick={() => subtractItem(item)}>
               -
             </button>
-            <input value={quantity} type="phone"></input>
+            <input
+              value={quantity}
+              type="phone"
+              onClick={(e) => e.target.select()}
+              onChange={(e) => changeItem(e.target.value, item)}
+            ></input>
             <button className="list-button" onClick={() => addItem(item)}>
               +
             </button>

@@ -1,11 +1,18 @@
 import "./ShoppingCart.css";
-import { useState, useEffect } from "react";
 import ListItem from "./ListItem";
-
+import OderTotal from "./OrderTotal";
 export default function ShoppingCart(props) {
-  const { shoppingCart, toggleCart } = props;
+  const { shoppingCart, toggleCart, addItem, subtractItem, changeItem } = props;
 
-  const itemList = shoppingCart.map((item) => <ListItem item={item} />);
+  const itemList = shoppingCart.map((item) => (
+    <ListItem
+      item={item}
+      addItem={addItem}
+      subtractItem={subtractItem}
+      changeItem={changeItem}
+      key={item.id}
+    />
+  ));
 
   return (
     <div className="list-menu">
@@ -14,6 +21,7 @@ export default function ShoppingCart(props) {
         x
       </button>
       <div className="shopping-cart-container">{itemList}</div>
+      <OderTotal items={shoppingCart} />
     </div>
   );
 }

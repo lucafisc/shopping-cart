@@ -34,6 +34,7 @@ export default function Categories(props) {
         categ={categ}
         icon={icon}
         categoryChange={categoryChange}
+        key={categ}
       />
     );
   });

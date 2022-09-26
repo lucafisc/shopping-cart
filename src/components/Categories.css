@@ -9,11 +9,6 @@
     width: 100%;
 }
 
-.categories-title::after {
-    content: "+";
-    text-align: right;
-}
-
 .categories {
     display: flex;
     justify-content: flex-start;
