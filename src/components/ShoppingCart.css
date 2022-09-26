@@ -27,10 +27,9 @@
 .shopping-cart-container {
     overflow: scroll;
     margin: 10px 0;
-    height: 100%;
 }
 
-.list-close {
+.list-button {
     background-color: white;
     color: var(--gray);
     display: flex;
@@ -40,9 +39,12 @@
     padding: 3px;
     width: 15px;
     height: 15px;
-    margin-left: auto;
     border: none;
     cursor: pointer;
+}
+
+.list-close {
+    margin-left: auto;
 }
 
 .list-item {
@@ -62,11 +64,28 @@
 
 }
 
-.list-item--text>h1 {
+.list-item--text>h1,
+.list-item--quantity>input {
     color: var(--gray);
     font-size: 0.6rem;
     text-transform: uppercase;
     font-weight: 300;
+}
+
+.list-item--quantity {
+    margin-top: 5px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.list-item--quantity>input {
+    font-family: var(--karla);
+    width: 18px;
+    height: 18px;
+    text-align: center;
+    border: none;
+    background-color: var(--white);
 }
 
 .list-item--price {

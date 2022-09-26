@@ -35,7 +35,7 @@ export default function Card(props) {
     <>
       {err === false && (
         <Link to={`/shop/${id}`} state={{ item: item }}>
-          <div className="card">
+          <div className="card hidden">
             <div className="img-wrapper">
               <img src={api_featured_image} />
               {vegan && <h3 className="vegan">Vegan</h3>}

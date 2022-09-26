@@ -26,6 +26,19 @@ export default function Shop() {
 
   const cards = items.map((item) => <Card item={item} />);
 
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      }
+    });
+  });
+
+  useEffect(() => {
+    const hiddenElements = document.querySelectorAll(".hidden");
+    hiddenElements.forEach((element) => observer.observe(element));
+  });
+
   return (
     <>
       <Categories category={category} categoryChange={categoryChange} />

@@ -19,12 +19,40 @@ export default function ShoppingCart(props) {
     setItems(array);
   }, [shoppingCart]);
 
-  const itemList = items.map((item) => <ListItem item={item} />);
+  function addItem(changedItem) {
+    let array = [];
+    items.map((item) => {
+      if (item.id === changedItem.id) {
+        const x = item.quantity + 1;
+        array.push({ ...item, quantity: x });
+      } else {
+        array.push({ ...item });
+      }
+    });
+    setItems(array);
+  }
+
+  function subtrackItem(changedItem) {
+    let array = [];
+    items.map((item) => {
+      if (item.id === changedItem.id) {
+        const x = item.quantity - 1;
+        if (x > 0) array.push({ ...item, quantity: x });
+      } else {
+        array.push({ ...item });
+      }
+    });
+    setItems(array);
+  }
+
+  const itemList = items.map((item) => (
+    <ListItem item={item} addItem={addItem} subtrackItem={subtrackItem} />
+  ));
 
   return (
     <div className="list-menu">
       <div className="triangle"></div>
-      <button className="list-close" onClick={toggleCart}>
+      <button className="list-button list-close" onClick={toggleCart}>
         x
       </button>
       <div className="shopping-cart-container">{itemList}</div>
