@@ -6,7 +6,15 @@ import { useState, useEffect } from "react";
 
 export default function Nav(props) {
   const { shoppingCart, toggleCart } = props;
-  const amount = shoppingCart.length;
+  const amount = shoppingCart
+    .map((item) => {
+      return item.quantity;
+    })
+    .reduce(add, 0);
+
+  function add(accumulator, a) {
+    return accumulator + a;
+  }
 
   const [circleClasses, setCircleClasses] = useState("");
   useEffect(() => {

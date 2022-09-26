@@ -24,9 +24,49 @@ function App() {
     localStorage.setItem("shopping-cart", JSON.stringify(shoppingCart));
   }, [shoppingCart]);
 
-  function addToShoppingCart(item) {
-    setShoppingCart((prevArray) => [...prevArray, item]);
+  function addToShoppingCart(newItem) {
+    setShoppingCart((prevArray) => {
+      let array = prevArray.map((item) => {
+        if (item.id === newItem.id) {
+          const newQuantity = item.quantity + 1;
+          return { ...item, quantity: newQuantity };
+        } else {
+          return item;
+        }
+      });
+
+      if (!array.some((e) => e.id === newItem.id)) {
+        array.push({ ...newItem, quantity: 1 });
+      }
+      return array;
+    });
   }
+
+  // function addItem(changedItem) {
+  //   let array = [];
+  //   items.map((item) => {
+  //     if (item.id === changedItem.id) {
+  //       const x = item.quantity + 1;
+  //       array.push({ ...item, quantity: x });
+  //     } else {
+  //       array.push({ ...item });
+  //     }
+  //   });
+  //   setItems(array);
+  // }
+
+  // function subtrackItem(changedItem) {
+  //   let array = [];
+  //   items.map((item) => {
+  //     if (item.id === changedItem.id) {
+  //       const x = item.quantity - 1;
+  //       if (x > 0) array.push({ ...item, quantity: x });
+  //     } else {
+  //       array.push({ ...item });
+  //     }
+  //   });
+  //   setItems(array);
+  // }
 
   function toggleCart() {
     setShowCart((prevValue) => !prevValue);
