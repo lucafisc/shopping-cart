@@ -114,7 +114,7 @@ hr {
     font-size: 0.8rem;
 }
 
-
+.fake-store,
 .total-container>h2 {
     font-family: var(--karla);
     font-weight: 300;
@@ -130,6 +130,7 @@ hr {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
 .place-order>button {
@@ -157,6 +158,19 @@ hr {
     background-color: var(--pink);
     color: var(--black);
     transform: scale(0.95);
+}
+
+.fake-store {
+    color: var(--black);
+    position: absolute;
+    top: 0;
+    transition: all 0.5s ease-out;
+    opacity: 0;
+}
+
+.show-warning {
+    opacity: 1;
+    transform: translateY(-20px);
 }
 
 @media only screen and (max-width: 600px) {

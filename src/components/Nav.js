@@ -5,7 +5,7 @@ import shoppingIcon from "../images/icons/shopping-bag-white.png";
 import { useState, useEffect } from "react";
 
 export default function Nav(props) {
-  const { shoppingCart, toggleCart } = props;
+  const { shoppingCart, toggleCart, hideCart } = props;
   const amount = shoppingCart
     .map((item) => {
       return item.quantity;
@@ -26,22 +26,22 @@ export default function Nav(props) {
 
   return (
     <nav className="nav">
-      <Link to="/">
+      <Link to="/" onClick={hideCart}>
         <div className="nav--logo">logo</div>
       </Link>
       <div className="nav--links">
         <ul>
-          <Link className="home-btn" to="/">
+          <Link className="home-btn" to="/" onClick={hideCart}>
             <li>Home</li>
           </Link>
-          <Link to="/shop">
+          <Link to="/shop" onClick={hideCart}>
             <li>Shop</li>
           </Link>
-          <Link to="/about" data-testid="about-page-link">
+          <Link to="/about" data-testid="about-page-link" onClick={hideCart}>
             <li>About</li>
           </Link>
         </ul>
-        <Link to="/favorites">
+        <Link to="/favorites" onClick={hideCart}>
           <div className="nav--favorites">
             <img src={favoritesIcon} />
           </div>

@@ -108,10 +108,18 @@ function App() {
     setShowCart((prevValue) => !prevValue);
   }
 
+  function hideCart() {
+    setShowCart(false);
+  }
+
   return (
     <Router>
       <div className="App">
-        <Nav shoppingCart={shoppingCart} toggleCart={toggleCart} />
+        <Nav
+          shoppingCart={shoppingCart}
+          toggleCart={toggleCart}
+          hideCart={hideCart}
+        />
         {showCart && (
           <ShoppingCart
             shoppingCart={shoppingCart}

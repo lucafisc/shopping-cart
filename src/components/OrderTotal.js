@@ -6,6 +6,14 @@ export default function OderTotal(props) {
   }, 0);
   const shipping = totalPrice > 40 ? 0 : 5;
 
+  function fakeStore() {
+    const warning = document.querySelector(".fake-store");
+    warning.classList.add("show-warning");
+    setTimeout(() => {
+      warning.classList.remove("show-warning");
+    }, 2000);
+  }
+
   return (
     <>
       <div className="total-container">
@@ -26,7 +34,10 @@ export default function OderTotal(props) {
         <h1>€ {totalPrice + shipping}</h1>
       </div>
       <div className="place-order">
-        <button>Place order</button>
+        <button onClick={fakeStore}>Place order</button>
+        <h2 className="fake-store">
+          this is a fake store, you can't place orders :(
+        </h2>
       </div>
     </>
   );
