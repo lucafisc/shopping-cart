@@ -1,0 +1,26 @@
+.about {
+    font-family: var(--karla);
+    color: var(--black);
+    padding: 20px;
+    height: calc(100vh - 100px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.about>ul {
+    list-style: none;
+}
+
+.about>ul>li {
+    margin-top: 8px;
+}
+
+.about>ul>li>a {
+    color: var(--black);
+    text-decoration: underline;
+}
+
+.about>ul>li>a:hover {
+    color: var(--pink);
+}
