@@ -4,7 +4,7 @@ export default function About() {
   return (
     <div className="about">
       <ul>
-        <li>this is a fake website built using React.</li>
+        <li>this is a fake store built using React.</li>
         <li>
           data fetched from the{" "}
           <a href="https://makeup-api.herokuapp.com/">Makeup AP</a>.

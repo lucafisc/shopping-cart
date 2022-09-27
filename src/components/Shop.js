@@ -5,7 +5,8 @@ import Loading from "./Loading";
 import Categories from "./Categories";
 import { fetchItems } from "../modules/fetchItems";
 
-export default function Shop() {
+export default function Shop(props) {
+  const { favorites, toggleFavorites } = props;
   const [items, setItems] = useState([]);
   const [category, setCategory] = useState(
     JSON.parse(localStorage.getItem("category")) || "blush"
@@ -24,7 +25,14 @@ export default function Shop() {
     setCategory(categ);
   }
 
-  const cards = items.map((item) => <Card item={item} key={item.id} />);
+  const cards = items.map((item) => (
+    <Card
+      item={item}
+      key={item.id}
+      favorites={favorites}
+      toggleFavorites={toggleFavorites}
+    />
+  ));
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {

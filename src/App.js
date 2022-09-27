@@ -21,6 +21,9 @@ function App() {
   const [showCart, setShowCart] = useState(false);
   const [width, setWidth] = useState(window.innerWidth);
   const [lockScroll, setLockScroll] = useState(false);
+  const [favorites, setFavorites] = useState(
+    JSON.parse(localStorage.getItem("favorites")) || []
+  );
 
   useEffect(() => {
     const handleResize = () => setWidth(window.innerWidth);
@@ -41,6 +44,10 @@ function App() {
   useEffect(() => {
     localStorage.setItem("shopping-cart", JSON.stringify(shoppingCart));
   }, [shoppingCart]);
+
+  useEffect(() => {
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+  }, [favorites]);
 
   function addToShoppingCart(newItem) {
     setShoppingCart((prevArray) => {
@@ -112,6 +119,18 @@ function App() {
     setShowCart(false);
   }
 
+  function toggleFavorites(e, item) {
+    e.preventDefault();
+    setFavorites((prevArray) => {
+      console.log(prevArray);
+      if (prevArray.some((e) => e.id === item.id)) {
+        return prevArray.filter((e) => e.id !== item.id);
+      } else {
+        return [...prevArray, item];
+      }
+    });
+  }
+
   return (
     <Router>
       <div className="App">
@@ -132,9 +151,17 @@ function App() {
         {!lockScroll && (
           <Routes>
             <Route path="/" exact element={<Home hideCart={hideCart} />} />
-            <Route path="/shop" element={<Shop />} />
+            <Route
+              path="/shop"
+              element={
+                <Shop favorites={favorites} toggleFavorites={toggleFavorites} />
+              }
+            />
             <Route path="/about" element={<About />} />
-            <Route path="/favorites" element={<Favorites />} />
+            <Route
+              path="/favorites"
+              element={<Favorites favorites={favorites} />}
+            />
             <Route
               path="/shop/:id"
               element={<Item addToShoppingCart={addToShoppingCart} />}

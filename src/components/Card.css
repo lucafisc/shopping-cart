@@ -65,7 +65,8 @@
     transition: all 0.2s ease-out;
 }
 
-.favorite-btn:hover {
+.favorite-btn:hover,
+.favorited {
     background-color: var(--pink);
 }
 

@@ -7,7 +7,7 @@ var imageExists = require("image-exists");
 
 export default function Card(props) {
   const [err, setErr] = useState(false);
-  const { item } = props;
+  const { item, favorites, toggleFavorites } = props;
   const { name, price, product_colors, id, api_featured_image, tag_list } =
     item;
   useEffect(() => {
@@ -31,6 +31,8 @@ export default function Card(props) {
   const organic = tag_list.includes("Organic");
   const vegan = tag_list.includes("Vegan");
   const natural = tag_list.includes("Natural");
+  const isFavorite = favorites.some((e) => e.id === id);
+
   return (
     <>
       {err === false && (
@@ -39,7 +41,11 @@ export default function Card(props) {
             <div className="img-wrapper">
               <img src={api_featured_image} />
               {vegan && <h3 className="vegan">Vegan</h3>}
-              <FavoriteButton />
+              <FavoriteButton
+                toggleFavorites={toggleFavorites}
+                item={item}
+                isFavorite={isFavorite}
+              />
             </div>
             <h4>{name}</h4>
             <h4>€ {price}</h4>
