@@ -1,0 +1,255 @@
+.home {
+    font-family: var(--karla);
+    padding: 20px;
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+
+.slogan {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 100%;
+    max-width: 280px;
+    margin: auto;
+    gap: 8px;
+    position: relative;
+}
+
+.slogan>h1 {
+    font-weight: 200;
+    font-style: italic;
+}
+
+.slogan>:nth-child(1),
+.slogan>:nth-child(3) {
+    align-self: flex-end;
+}
+
+.creators {
+    font-weight: 400;
+    background-color: var(--pink);
+    border-radius: 50px;
+    padding: 0 10px;
+}
+
+.brands {
+    font-weight: 400;
+}
+
+.slogan>img {
+    width: 130px;
+    position: absolute;
+    bottom: -15px;
+    right: -5px;
+
+}
+
+.cover {
+    max-width: 270px;
+    aspect-ratio: 1;
+    margin: 30px auto;
+    border-radius: 40px;
+    object-fit: cover;
+}
+
+
+.shop-now>h1 {
+    font-weight: 200;
+    cursor: pointer;
+    border-radius: 40px;
+    padding: 5px 15px;
+}
+
+.shop-now:hover>h1 {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+.shop-now:active>h1 {
+    background-color: var(--pink);
+    color: var(--black);
+}
+
+
+.fade-in {
+    opacity: 0;
+    animation: fade-in 1.5s forwards;
+}
+
+.slogan>:nth-child(2) {
+    animation-delay: 1s;
+}
+
+.slogan>:nth-child(3) {
+    animation-delay: 2s;
+}
+
+.yellow-svg {
+    animation: brands 1.5s forwards;
+    animation-delay: 4s;
+    opacity: 0;
+}
+
+.cover {
+    animation: cover 1.5s forwards;
+    animation-delay: 3s;
+    opacity: 0;
+}
+
+.shop-now {
+    animation: shop-now 1.5s forwards;
+    animation-delay: 3s;
+    opacity: 0;
+}
+
+.arrows {
+    display: inline-block;
+    animation: arrow 2s forwards infinite;
+    opacity: 0;
+}
+
+@keyframes arrow {
+    0% {
+        transform: translateX(-10px);
+        opacity: 0;
+        filter: blur(3px);
+    }
+
+    30% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+        filter: blur(0);
+    }
+
+    60% {
+        opacity: 1;
+    }
+
+
+
+    100% {
+        transform: translateX(15px);
+        opacity: 0;
+    }
+
+}
+
+@keyframes fade-in {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+        filter: blur(5px);
+    }
+
+    50% {
+        opacity: 0.7;
+        filter: blur(0);
+    }
+
+    60% {
+        transform: translateY(-1px);
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes brands {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    80% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes cover {
+    0% {
+        transform: scale(0.95) translateX(100px);
+        opacity: 0;
+        filter: blur(5px);
+    }
+
+    80% {
+        opacity: 1;
+        filter: blur(0);
+        transform: scale(1) translateX(0);
+    }
+
+    100% {
+        opacity: 1;
+    }
+
+}
+
+@keyframes shop-now {
+    0% {
+        transform: scale(0.95) translateX(-100px);
+        opacity: 0;
+        filter: blur(5px);
+    }
+
+    80% {
+        opacity: 1;
+        filter: blur(0);
+        transform: scale(1) translateX(0);
+    }
+
+    100% {
+        opacity: 1;
+    }
+
+}
+
+@media only screen and (min-width: 500px) {
+
+    .home {
+        height: calc(100vh - 80px);
+        position: relative;
+        margin: 0 20px;
+    }
+
+
+    .slogan {
+        position: absolute;
+        left: 0;
+        top: 40%;
+        transform: translateY(-50%);
+        z-index: 999;
+    }
+
+    .cover {
+        width: 40vw;
+        max-width: 300px;
+        max-height: 70vh;
+        aspect-ratio: 0.8;
+        position: absolute;
+        right: 0;
+        top: 20%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .shop-now {
+        position: absolute;
+        bottom: 5%;
+        left: 10%;
+    }
+}
