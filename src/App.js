@@ -131,7 +131,7 @@ function App() {
         )}
         {!lockScroll && (
           <Routes>
-            <Route path="/" exact element={<Home />} />
+            <Route path="/" exact element={<Home hideCart={hideCart} />} />
             <Route path="/shop" element={<Shop />} />
             <Route path="/about" element={<About />} />
             <Route path="/favorites" element={<Favorites />} />

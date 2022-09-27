@@ -57,19 +57,20 @@
 }
 
 
-.shop-now>h1 {
+.shop-now>a>h1 {
     font-weight: 200;
     cursor: pointer;
     border-radius: 40px;
     padding: 5px 15px;
+    color: var(--black);
 }
 
-.shop-now:hover>h1 {
+.shop-now:hover>a>h1 {
     background-color: var(--black);
     color: var(--white);
 }
 
-.shop-now:active>h1 {
+.shop-now:active>a>h1 {
     background-color: var(--pink);
     color: var(--black);
 }

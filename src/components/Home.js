@@ -1,7 +1,11 @@
 import "./Home.css";
 import brands from "../images/brands.svg";
 import cover from "../images/curology-VItxz6u036U-unsplash.jpg";
-export default function Home() {
+import { Link } from "react-router-dom";
+
+export default function Home(props) {
+  const { hideCart } = props;
+
   return (
     <div className="home">
       <div className="slogan">
@@ -16,9 +20,11 @@ export default function Home() {
       </div>
       <img src={cover} className="cover" />
       <div className="shop-now">
-        <h1>
-          shop now <span className="arrows">{">>>"}</span>
-        </h1>
+        <Link to="/shop" onClick={hideCart}>
+          <h1>
+            shop now <span className="arrows">{">>>"}</span>
+          </h1>
+        </Link>
       </div>
     </div>
   );
