@@ -1,0 +1,19 @@
+.no-favorites {
+    height: calc(100vh - 100px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.no-favorites>h1 {
+    font-family: var(--karla);
+    color: #dddddd;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.no-favorites>img {
+    width: 200px;
+}

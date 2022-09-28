@@ -173,6 +173,12 @@ hr {
     transform: translateY(-20px);
 }
 
+.empty-cart {
+    font-size: 1rem;
+    color: var(--gray);
+    text-align: center;
+}
+
 @media only screen and (max-width: 600px) {
     .list-menu {
         position: fixed;

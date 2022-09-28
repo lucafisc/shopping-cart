@@ -1,5 +1,7 @@
 import "./Favorites.css";
 import Card from "./Card";
+import heart from "../images/empty_heart.svg";
+
 import { useEffect } from "react";
 export default function Favorites(props) {
   const { favorites, toggleFavorites } = props;
@@ -30,7 +32,12 @@ export default function Favorites(props) {
   return (
     <>
       {favorites.length > 0 && <div className="items-grid">{favs}</div>}
-      {favorites.length <= 0 && <div>ll</div>}
+      {favorites.length <= 0 && (
+        <div className="no-favorites">
+          <img src={heart} />
+          <h1>nothing here yet!</h1>
+        </div>
+      )}
     </>
   );
 }

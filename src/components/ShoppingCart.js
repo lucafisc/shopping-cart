@@ -20,8 +20,15 @@ export default function ShoppingCart(props) {
       <button className="list-button list-close" onClick={toggleCart}>
         x
       </button>
-      <div className="shopping-cart-container">{itemList}</div>
-      <OderTotal items={shoppingCart} />
+      {shoppingCart.length > 0 && (
+        <>
+          <div className="shopping-cart-container">{itemList}</div>
+          <OderTotal items={shoppingCart} />
+        </>
+      )}
+      {shoppingCart.length <= 0 && (
+        <h1 className="empty-cart">nothing here yet!</h1>
+      )}
     </div>
   );
 }
