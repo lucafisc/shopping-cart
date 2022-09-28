@@ -130,6 +130,10 @@ function App() {
     });
   }
 
+  useEffect(() => {
+    document.title = "shopping cart project";
+  });
+
   return (
     <Router basename={process.env.PUBLIC_URL}>
       <div className="App">
