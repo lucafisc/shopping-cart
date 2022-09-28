@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/shopping-cart/static/css/main.7d25744f.css",
-    "main.js": "/shopping-cart/static/js/main.e9b1183d.js",
+    "main.js": "/shopping-cart/static/js/main.8455f4c5.js",
     "static/js/787.d6fe38e8.chunk.js": "/shopping-cart/static/js/787.d6fe38e8.chunk.js",
     "static/media/curology-VItxz6u036U-unsplash.jpg": "/shopping-cart/static/media/curology-VItxz6u036U-unsplash.5176f5b5fa3b89025b78.jpg",
     "static/media/PicNic-Regular.woff": "/shopping-cart/static/media/PicNic-Regular.1aa31bc788227b85c8cb.woff",
@@ -13,11 +13,11 @@
     "index.html": "/shopping-cart/index.html",
     "static/media/brands.svg": "/shopping-cart/static/media/brands.aaf9984ce20c88caf0f166744173ca53.svg",
     "main.7d25744f.css.map": "/shopping-cart/static/css/main.7d25744f.css.map",
-    "main.e9b1183d.js.map": "/shopping-cart/static/js/main.e9b1183d.js.map",
+    "main.8455f4c5.js.map": "/shopping-cart/static/js/main.8455f4c5.js.map",
     "787.d6fe38e8.chunk.js.map": "/shopping-cart/static/js/787.d6fe38e8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7d25744f.css",
-    "static/js/main.e9b1183d.js"
+    "static/js/main.8455f4c5.js"
   ]
 }
