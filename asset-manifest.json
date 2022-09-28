@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/react-gh-pages/static/css/main.2160b43a.css",
+    "main.js": "/react-gh-pages/static/js/main.c962873d.js",
+    "static/js/787.d6fe38e8.chunk.js": "/react-gh-pages/static/js/787.d6fe38e8.chunk.js",
+    "static/media/curology-VItxz6u036U-unsplash.jpg": "/react-gh-pages/static/media/curology-VItxz6u036U-unsplash.5176f5b5fa3b89025b78.jpg",
+    "static/media/PicNic-Regular.woff": "/react-gh-pages/static/media/PicNic-Regular.1aa31bc788227b85c8cb.woff",
+    "static/media/mascara.png": "/react-gh-pages/static/media/mascara.6bb43641a19751f40b7d.png",
+    "static/media/blush.png": "/react-gh-pages/static/media/blush.3094c3e96d7af5485976.png",
+    "static/media/bronzer.png": "/react-gh-pages/static/media/bronzer.a552f18c6769838ec18a.png",
+    "static/media/eyeshadow.png": "/react-gh-pages/static/media/eyeshadow.985d0a0e833c10fcff2d.png",
+    "static/media/eyeliner.png": "/react-gh-pages/static/media/eyeliner.2f77f210a9cc20a5218d.png",
+    "index.html": "/react-gh-pages/index.html",
+    "static/media/brands.svg": "/react-gh-pages/static/media/brands.aaf9984ce20c88caf0f166744173ca53.svg",
+    "main.2160b43a.css.map": "/react-gh-pages/static/css/main.2160b43a.css.map",
+    "main.c962873d.js.map": "/react-gh-pages/static/js/main.c962873d.js.map",
+    "787.d6fe38e8.chunk.js.map": "/react-gh-pages/static/js/787.d6fe38e8.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2160b43a.css",
+    "static/js/main.c962873d.js"
+  ]
+}
