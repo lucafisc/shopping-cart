@@ -12,7 +12,7 @@ export default function Shop(props) {
     JSON.parse(localStorage.getItem("category")) || "blush"
   );
   useEffect(() => {
-    const url = `http://makeup-api.herokuapp.com/api/v1/products.json?product_type=${category}`;
+    const url = `https://makeup-api.herokuapp.com/api/v1/products.json?product_type=${category}`;
     fetchItems(url, setItems);
   }, [category]);
 
