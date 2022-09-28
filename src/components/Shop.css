@@ -2,6 +2,7 @@
 .loading-container {
     margin-top: 20px;
     display: grid;
+    justify-content: center;
     grid-gap: 10px;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }

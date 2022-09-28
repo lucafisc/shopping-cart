@@ -122,7 +122,6 @@ function App() {
   function toggleFavorites(e, item) {
     e.preventDefault();
     setFavorites((prevArray) => {
-      console.log(prevArray);
       if (prevArray.some((e) => e.id === item.id)) {
         return prevArray.filter((e) => e.id !== item.id);
       } else {
@@ -160,7 +159,12 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route
               path="/favorites"
-              element={<Favorites favorites={favorites} />}
+              element={
+                <Favorites
+                  favorites={favorites}
+                  toggleFavorites={toggleFavorites}
+                />
+              }
             />
             <Route
               path="/shop/:id"
