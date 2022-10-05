@@ -89,6 +89,8 @@ Users should be able to:
 ### Built with
 
 - [React](https://reactjs.org/) - JS library
+- React Hooks
+- React Router
 - Semantic HTML5 markup
 - CSS custom properties
 - CSS Grid
