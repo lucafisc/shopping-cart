@@ -51,7 +51,7 @@ Users should be able to:
 
 
 ### Screenshot
-<img src="https://i.imgur.com/RcFOSkw.png" alt="drawing" width="400"/>
+<img src="https://i.imgur.com/RcFOSkw.png" alt="drawing" width="500"/>
 
 
 
@@ -59,24 +59,26 @@ Users should be able to:
 
 ### Smooth animations
 
-![2022-10-05 10.14.00](https://i.imgur.com/gsmzXV9.gif)
+<img src="https://i.imgur.com/gsmzXV9.gif" alt="drawing" width="500"/>
 
 
-![2022-10-05 10.33.56](https://i.imgur.com/hZxgMwP.gif)
+<img src="https://i.imgur.com/hZxgMwP.gif" alt="drawing" width="500"/>
+
 
 
 
 ### Navigate between categories
 
+<img src="https://i.imgur.com/JlsTDxi.gif" alt="drawing" width="500"/>
 
-![2022-10-05 10.19.12](https://i.imgur.com/JlsTDxi.gif)
 
 ### Favorite items
-![2022-10-05 10.29.35](https://i.imgur.com/bdBvnkz.gif)
+<img src="https://i.imgur.com/bdBvnkz.gif" alt="drawing" width="500"/>
+
 
 ### Mobile support
+<img src="https://i.imgur.com/K212695.gif" alt="drawing" width="500"/>
 
-![2022-10-05 10.50.34](https://i.imgur.com/K212695.gif)
 
 
 
