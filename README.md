@@ -15,7 +15,9 @@
 > 
 > This is a solution to the [Shopping Cart challenge of the Odin Project](https://www.theodinproject.com/lessons/node-path-javascript-shopping-cart).
 > 
-> ### 🏠 [Demo link]((https://lucafisc.github.io/shopping-cart/)https://lucafisc.github.)
+> ### 🏠 [Demo link](https://lucafisc.github.io/shopping-cart/)
+
+
 
 ## Table of contents
 
@@ -77,7 +79,7 @@ Users should be able to:
 
 
 ### Mobile support
-<img src="https://i.imgur.com/K212695.gif" alt="drawing" width="500"/>
+<img src="https://i.imgur.com/K212695.gif" alt="drawing" width="300"/>
 
 
 
