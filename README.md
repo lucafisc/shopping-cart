@@ -1,14 +1,15 @@
 <h1 align="center">Welcome to Shopping Cart 👋 🛒</h1>
-<p>
-
-
-![logo-01](https://i.imgur.com/Yib2Ydl.png)
-
-
 
 
   <img alt="Version" src="https://img.shields.io/badge/version-0.1.0-blue.svg?cacheSeconds=2592000" />
 </p>
+
+<p>
+<p align="center">
+<img src="https://i.imgur.com/Yib2Ydl.png" alt="drawing" width="200"/>
+</p>
+
+
 
 > A clean designed shopping cart application.
 > 
@@ -50,8 +51,9 @@ Users should be able to:
 
 
 ### Screenshot
+<img src="https://i.imgur.com/RcFOSkw.png" alt="drawing" width="400"/>
 
-![Screen Shot 2022-09-28 at 11.02.19](https://i.imgur.com/RcFOSkw.png)
+
 
 ## Features
 
